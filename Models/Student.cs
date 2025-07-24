@@ -22,6 +22,7 @@
             Course = "";
             Section = "";
             Birthday = DateTime.Today;
+            Gender = Gender.Unknown;
         }
 
         public Student(string firstName, string lastName)
