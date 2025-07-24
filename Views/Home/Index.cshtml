@@ -2,7 +2,113 @@
 @{
     ViewData["Title"] = "Home Page";
 
+    List <Student> students = new List<Student>
+    {
+        new Student ("Juan", "Dela Cruz")
+        {
+            Title = "Mr. ",
+            Course = "BSIT",
+            Section = "31A3",
+            Birthday = new DateTime(2002, 5, 14)
+        },
 
+        new Student("Maria", "Reyes")
+        {
+            Title = "Ms. ",
+            Course = "BSCS",
+            Section = "32B1",
+            Birthday = new DateTime(2001, 7, 24)
+        },
+
+        new Student("Pedro", "Santos")
+        {
+            Title = "Mr. ",
+            Course = "BSIT",
+            Section = "32A2",
+            Birthday = new DateTime(2000, 3, 15)
+        },
+
+        new Student("Ana", "Lopez")
+        {
+            Title = "Ms. ",
+            Course = "BSCS",
+            Section = "32A1",
+            Birthday = new DateTime(2000, 3, 15)
+        },
+        new Student("Luis", "Torres") {
+            Title = "Mr.",
+            Course = "BSIT",
+            Section = "31A3",
+            Birthday = new DateTime(2002, 9, 18)
+        },
+        new Student("Carmen", "Del Rosario") {
+            Title = "Ms.",
+            Course = "BSCS",
+            Section = "32B2",
+            Birthday = new DateTime(2001, 12, 5)
+        },
+        new Student("Jose", "Garcia") {
+            Title = "Mr.",
+            Course = "BSIT",
+            Section = "31A4",
+            Birthday = new DateTime(2003, 6, 30)
+        },
+        new Student("Ella", "Navarro") {
+            Title = "Ms.",
+            Course = "BSCS",
+            Section = "32A2",
+            Birthday = new DateTime(2000, 10, 12)
+        },
+        new Student("Miguel", "Rivera") {
+            Title = "Mr.",
+            Course = "BSIT",
+            Section = "31B1",
+            Birthday = new DateTime(2001, 2, 25)
+        },
+        new Student("Liza", "Ramos") {
+            Title = "Ms.",
+            Course = "BSCS",
+            Section = "32A3",
+            Birthday = new DateTime(2002, 11, 21)
+        }
+    };
+
+    students[0].SetGender(Gender.Male);
+    students[1].SetGender(Gender.Female);
+    students[2].SetGender(Gender.Male);
+    students[3].SetGender(Gender.Female);
+    students[4].SetGender(Gender.Male);
+    students[5].SetGender(Gender.Female);
+    students[6].SetGender(Gender.Male);
+    students[7].SetGender(Gender.Female);
+    students[8].SetGender(Gender.Male);
+    students[9].SetGender(Gender.Female);
 }
 
+<h2>.-+' Student Information Table '+-.</h2>
 
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Gender</th>
+            <th>Course</th>
+            <th>Section</th>
+            <th>Birthday</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in students)
+        {
+            <tr>
+                <td>@student.FullName</td>
+                <td>@student.Gender</td>
+                <td>@student.Course</td>
+                <td>@student.Section</td>
+                <td>@student.Birthday.ToString("yyyy-MM-dd")</td>
+                <td>@student.Age</td>
+            </tr>
+        }
+    </tbody>
+</table>
